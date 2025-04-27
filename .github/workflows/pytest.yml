@@ -1,33 +1,31 @@
-name: Rodar Pytest
+name: Run Tests on Pull Request
 
 on:
   pull_request:
     branches:
-      - main
+      - main # Ajuste caso sua branch principal seja diferente
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # Sistema operacional onde o job será executado
 
     steps:
-      - name: Clonar o código
+      # Etapa 1: Checkout do código
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Configurar o Python
+      # Etapa 2: Configuração do Python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: 3.11 # Ajuste para a versão do Python que você está usando
 
-      - name: Instalar dependências
+      # Etapa 3: Instalar dependências
+      - name: Install dependencies
         run: |
           pip install pytest
 
-      - name: Rodar os testes
+      # Etapa 4: Rodar os testes
+      - name: Run tests
         run: |
-          pytest
-
-      - name: Enviar alerta para Discord
-        uses: Ilshidur/action-discord@v2
-        with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          message: "Os testes foram executados!"
+          pytest tests/test_functions.py --maxfail=1 --disable-warnings -q
