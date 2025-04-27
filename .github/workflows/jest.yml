@@ -25,14 +25,3 @@ jobs:
       - name: Run Jest tests
         run: |
           npm test  # Rodar os testes com Jest
-
-  alert:
-    needs: test # O job 'alert' depende do job 'test' ser executado com sucesso
-    runs-on: ubuntu-latest # O job 'alert' será executado em Ubuntu também
-    steps:
-      - name: Send alert to Discord
-        uses: Ilshidur/action-discord@v2
-        with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }} # Webhook do Discord
-          message: "Os testes foram executados!" # Mensagem do alerta
-
