@@ -1,11 +1,9 @@
-# .github/workflows/testes.yml
-
 name: Rodar testes nas Pull Requests
 
 on:
   pull_request:
     branches:
-      - main # ou o nome da branch principal que você usa
+      - main
 
 jobs:
   test:
@@ -18,10 +16,10 @@ jobs:
       - name: Instalar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20" # ou a versão que seu projeto usa
+          node-version: "20"
 
       - name: Instalar dependências
-        run: npm install
+        run: npm ci
 
-      - name: Rodar os testes
-        run: npm test
+      - name: Rodar Jest manualmente
+        run: node_modules/.bin/jest
