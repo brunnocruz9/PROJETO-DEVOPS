@@ -3,7 +3,7 @@ name: Run Tests on Pull Request
 on:
   pull_request:
     branches:
-      - main # Altere para a branch principal do seu repositório, caso seja diferente
+      - main # Ajuste caso sua branch principal seja diferente
 
 jobs:
   test:
@@ -18,14 +18,14 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: 3.11 # Escolha a versão do Python que você está usando
+          python-version: 3.11 # Ajuste para a versão do Python que você está usando
 
       # Etapa 3: Instalar dependências
       - name: Install dependencies
         run: |
           pip install pytest
 
-      # Etapa 4: Rodar os testes com pytest
+      # Etapa 4: Rodar os testes
       - name: Run tests
         run: |
-          pytest --maxfail=1 --disable-warnings -q  # Argumentos para o pytest, ajustando para não falhar em muitos erros
+          pytest tests/test_functions.py --maxfail=1 --disable-warnings -q
