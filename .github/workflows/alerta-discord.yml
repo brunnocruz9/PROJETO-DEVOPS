@@ -1,0 +1,21 @@
+name: Alerta para Discord
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  send-alert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enviar alerta para Discord
+        uses: Ilshidur/action-discord@v2
+        with:
+          webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          message: |
+            🚀 Novo Push no Repositório!
+            Repositório: ${{ github.repository }}
+            Branch: ${{ github.ref_name }}
+            Autor: ${{ github.actor }}
+            Commit: ${{ github.sha }}
