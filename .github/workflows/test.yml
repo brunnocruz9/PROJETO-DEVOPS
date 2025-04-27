@@ -1,0 +1,31 @@
+name: Run Tests on Pull Request
+
+on:
+  pull_request:
+    branches:
+      - main # Altere para a branch principal do seu repositório, caso seja diferente
+
+jobs:
+  test:
+    runs-on: ubuntu-latest # Sistema operacional onde o job será executado
+
+    steps:
+      # Etapa 1: Checkout do código
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Etapa 2: Configuração do Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.11 # Escolha a versão do Python que você está usando
+
+      # Etapa 3: Instalar dependências
+      - name: Install dependencies
+        run: |
+          pip install pytest
+
+      # Etapa 4: Rodar os testes com pytest
+      - name: Run tests
+        run: |
+          pytest --maxfail=1 --disable-warnings -q  # Argumentos para o pytest, ajustando para não falhar em muitos erros
