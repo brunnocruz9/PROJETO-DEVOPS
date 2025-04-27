@@ -1,0 +1,32 @@
+{
+  "name": "projeto-devops",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000P\u0000R\u0000O\u0000J\u0000E\u0000T\u0000O\u0000-\u0000D\u0000E\u0000V\u0000O\u0000P\u0000S\u0000\r\u0000 \u0000\r\u0000 \u0000L\u0000i\u0000n\u0000h\u0000a\u0000 \u0000e\u0000x\u0000t\u0000r\u0000a\u0000 \u0000p\u0000a\u0000r\u0000a\u0000 \u0000t\u0000e\u0000s\u0000t\u0000a\u0000r\u0000 \u0000P\u0000R\u0000.\u0000\r\u0000 \u0000T\u0000e\u0000s\u0000t\u0000a\u0000n\u0000d\u0000o\u0000 \u0000P\u0000u\u0000l\u0000l\u0000 \u0000R\u0000e\u0000q\u0000u\u0000e\u0000s\u0000t\u0000 \u0000p\u0000a\u0000r\u0000a\u0000 \u0000r\u0000o\u0000d\u0000a\u0000r\u0000 \u0000P\u0000y\u0000t\u0000e\u0000s\u0000t\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "testMatch": [
+      "**/tests/**/*.js"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brunnocruz9/PROJETO-DEVOPS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/brunnocruz9/PROJETO-DEVOPS/issues"
+  },
+  "homepage": "https://github.com/brunnocruz9/PROJETO-DEVOPS#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
