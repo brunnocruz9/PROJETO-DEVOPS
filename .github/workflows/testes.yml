@@ -23,5 +23,5 @@ jobs:
       - name: Instalar dependências (com Jest incluído)
         run: npm ci
 
-      - name: Rodar os testes
-        run: npx test
+      - name: Rodar os testes com npx
+        run: npx jest
