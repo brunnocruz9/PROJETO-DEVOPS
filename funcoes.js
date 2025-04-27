@@ -1,3 +1,4 @@
+// Funções matemáticas básicas
 // funcoes.js
 
 function somar(a, b) {
